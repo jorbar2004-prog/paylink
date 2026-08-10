@@ -1,0 +1,9 @@
+name = "paylink-sync"
+main = "src/index.ts"
+compatibility_date = "2026-08-09"
+
+# Descomentar cuando crees la base D1 en Cloudflare
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "paylink-backup"
+# database_id = "tu-database-id-aqui"
