@@ -16,6 +16,8 @@ export interface Merchant {
   name: string
   cbu: string
   alias: string
+  /** Resultado de validar el dígito verificador del CBU (undefined = no se pudo chequear). */
+  cbuValid?: boolean
 }
 
 export type View = 'scan' | 'history' | 'stats'
