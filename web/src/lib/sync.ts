@@ -1,5 +1,4 @@
-import { Payment } from '../types'
-import { getPayments, getSetting, setSetting } from './db'
+import { getPayments, getSetting, setSetting, updatePayment } from './db'
 import { encrypt } from './crypto'
 
 const API_URL = import.meta.env.VITE_API_URL || ''
@@ -37,7 +36,6 @@ export async function syncPayments(passphrase: string): Promise<boolean> {
 
     const { imported } = await res.json()
     for (const id of imported) {
-      const { updatePayment } = await import('./db')
       await updatePayment(id, { synced: true })
     }
     return true
