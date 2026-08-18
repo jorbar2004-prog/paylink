@@ -25,6 +25,11 @@ const BANKS = [
   { id: 'santander', label: 'Santander', scheme: 'santander://' },
   { id: 'bbva', label: 'BBVA', scheme: 'bbva://' },
   { id: 'macro', label: 'Macro', scheme: 'macro://' },
+  // BPN no tiene un scheme custom documentado públicamente; en vez de adivinar
+  // uno, usamos un Android Intent apuntando al package real de "Mi BPN" (su
+  // billetera con QR), con fallback a la Play Store si no está instalada.
+  // Solo funciona en Android/Chrome, no en iOS.
+  { id: 'bpn', label: 'BPN (Mi BPN)', scheme: 'intent://#Intent;package=com.poincenot.bpn.mobile;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.poincenot.bpn.mobile;end' },
   { id: 'mercadopago', label: 'Mercado Pago', scheme: 'mercadopago://' },
   { id: 'uala', label: 'Ualá', scheme: 'uala://' },
   { id: 'brubank', label: 'Brubank', scheme: 'brubank://' },
